@@ -1,7 +1,59 @@
-## Put comments here that give an overall description of what your
-## functions do
+###############################################################################
+# Author:       Christian Rothmann
+# Date:         26.04.2014
+# forked from:  https://github.com/rdpeng/ProgrammingAssignment2 
+#
+#
+# makeCacheMatrix: 
+# This function creates a special "matrix" object that can cache its inverse 
+# matrix with the use of the superassignment operator "<<-". When invoked,
+# "makeCacheMatrix" defines and return a list of four accessor functions: 
+# - set()
+# - get()
+# - setsolve()
+# - getsolve()
+# which can set and get the matrix and set and get 
+# a calculated and cached inverse matrix. The cached value is stored in
+# "cached.inv" until a new invokement of "makeCacheMatrix" or the call of the
+# set function (store a new matrix) is done.
+#
+# cacheSolve:
+# This function computes the inverse of the special "matrix" returned by 
+# makeCacheMatrix above. If the inverse has already been calculated and stored
+# in "cached.inv", cacheSolve should retrieve the inverse from this cache
+# variable. If the matrix has changed, either with the set-function of
+# makeCacheMatrix or a new invokement of makeCacheMatrix, the cacheSolve
+# function is calculating the inverse matrix with the solve function and use the
+# setsolve() function of makeCacheMatrix to store the value in the cache
+# variable "cached.inv".
+#
+#
+# Examples / Usage:
+#
+# mym1 <- matrix(c(0,1,3,4,2,-1,1,-1,7), 3, 3)  # create my matrix 1
+# mym2 <- matrix(c(3,2,1,5,4,2,1,5,2), 3, 3)    # create my matrix 2
+#
+# mycm <- makeCacheMatrix(mym1) # create special matrix of mym1
+#
+# cacheSolve(mycm)              # calculate the inverse matrix of mym1
+#
+# cacheSolve(mycm)              # get the inverse matrix of nym1, this 2nd time
+#                               # it will read the result out of the 
+#                               # cached variable
+#
+# mycm$set(mym2)                # set a new matrix with the setter function and
+#                               # clear the cached inverse matrix
+#
+# mycm$getsolve()               # proof: the cached inverse matrix is NULL
+#
+# cacheSolve(mycm)              # calculate the inverse of the new matrix (nym2)
+#                               # and stores it in the cached inverse variable
+# 
+###############################################################################
 
-## Write a short comment describing this function
+## This function creates a special "matrix" object that can cache its
+## inverse. When invoked, "makeCacheMatrix" defines and returns four functions
+## in a list.
 
 makeCacheMatrix <- function(x = matrix()) {
         
