@@ -1,6 +1,6 @@
 ###############################################################################
 # Author:       Christian Rothmann
-# Date:         26.04.2014
+# Date:         27.04.2014
 # forked from:  https://github.com/rdpeng/ProgrammingAssignment2 
 #
 #
@@ -15,7 +15,7 @@
 # which can set and get the matrix and set and get 
 # a calculated and cached inverse matrix. The cached value is stored in
 # "cached.inv" until a new invokement of "makeCacheMatrix" or the call of the
-# set function (store a new matrix) is done.
+# set function (store a new matrix).
 #
 # cacheSolve:
 # This function computes the inverse of the special "matrix" returned by 
