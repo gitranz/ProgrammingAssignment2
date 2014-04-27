@@ -1,6 +1,5 @@
 ###############################################################################
 # Author:       Christian Rothmann
-# Date:         27.04.2014
 # forked from:  https://github.com/rdpeng/ProgrammingAssignment2 
 #
 #
